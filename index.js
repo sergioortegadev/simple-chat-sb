@@ -15,7 +15,7 @@ const port = process.env.PORT ?? 3000;
 
 // io es el srv socket, su método .on() define que cuando haya un evento haga... (lo q indiquemos en la callback)
 io.on('connection', (socket) => {
-  console.log(' » Usuario Conectado:', socket.client.conn.id);
+  console.log(' » Usuario Conectado:', socket.client.conn.id.slice(0, 6));
 
   socket.on('message', (data) => {
     console.log('  - Message:', data);
